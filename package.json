@@ -1,0 +1,73 @@
+{
+  "name": "php-xdebug",
+  "displayName": "PHP Xdebug",
+  "version": "0.0.2",
+  "publisher": "kakumei",
+  "description": "php xdebug configuration for VS Code.",
+  "icon": "image/icon.png",
+  "author": {
+    "name": "kakumei",
+    "email": "fujiyama@kakumei.jp"
+  },
+  "license": "MIT",
+  "keywords": [
+    "php"
+  ],
+  "engines": {
+    "vscode": "^1.34.0",
+    "node": "^8.9.3"
+  },
+  "categories": [
+    "Debuggers"
+  ],
+  "private": true,
+  "scripts": {
+    "prepublish": "tsc -p ./src",
+    "compile": "tsc -p ./src",
+    "tslint": "tslint ./src/**/*.ts",
+    "watch": "tsc -w -p ./src",
+    "test": "mocha -u tdd ./out/tests/",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "dependencies": {
+    "await-notify": "1.0.1",
+    "vscode-debugadapter": "1.34.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.0.2",
+    "@types/mocha": "5.2.6",
+    "typescript": "3.4.5",
+    "mocha": "5.2.0",
+    "vscode": "1.1.34",
+    "vscode-debugadapter-testsupport": "1.34.0",
+    "tslint": "5.16.0",
+    "vsce": "1.62.0"
+  },
+  "main": "./out/extension",
+  "activationEvents": [
+    "onDebug"
+  ],
+  "contributes": {
+    "breakpoints": [
+      {
+        "language": "php"
+      }
+    ],
+    "debuggers": [
+      {
+        "type": "php-xdebug",
+        "label": "PHP Xdebug",
+        "initialConfigurations": [
+          {
+            "name": "php-xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000
+          }
+        ]
+      }
+    ]
+  }
+}
