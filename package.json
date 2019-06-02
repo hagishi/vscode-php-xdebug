@@ -1,13 +1,20 @@
 {
   "name": "php-xdebug",
   "displayName": "PHP Xdebug",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "kakumei",
   "description": "php xdebug configuration for VS Code.",
   "icon": "image/icon.png",
   "author": {
     "name": "kakumei",
     "email": "fujiyama@kakumei.jp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hagishi/vscode-php-xdebug"
+  },
+  "bugs": {
+    "url": "https://github.com/hagishi/vscode-php-xdebug/issues"
   },
   "license": "MIT",
   "keywords": [
