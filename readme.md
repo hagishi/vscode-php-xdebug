@@ -2,6 +2,8 @@
 
 ## About PHP Xdebug
 
+![about](image/step.gif)
+
 ## Using PHP Xdebug
 
 - Install the **PHP Xdebug** extension in VS Code.
