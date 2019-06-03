@@ -13,18 +13,19 @@ exports.activate = activate;
 // this method is called when your extension is deactivated
 function deactivate() { }
 exports.deactivate = deactivate;
-const InitialDebugConfig = {
-    name: 'Php XDebug and Run',
+const autoDebugConfig = {
+    name: 'Launch currently open script',
     type: 'php',
     request: 'launch',
-    port: 9000,
     program: '${file}',
+    cwd: '${fileDirname}',
+    port: 9000,
 };
 class PhpXdebugConfigurationProvider {
     resolveDebugConfiguration(folder, config, token) {
         // if launch.json is missing or empty
         if (!config.type && !config.request && !config.name) {
-            return InitialDebugConfig;
+            return autoDebugConfig;
         }
         return config;
     }
