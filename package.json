@@ -1,7 +1,7 @@
 {
   "name": "php-xdebug",
   "displayName": "PHP Xdebug",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "kakumei",
   "description": "php xdebug configuration for VS Code.",
   "icon": "image/icon.png",
