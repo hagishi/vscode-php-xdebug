@@ -1,5 +1,7 @@
 # VS Code PHP Xdebug
 
+You don’t need any configurations anymore!
+
 ## About PHP Xdebug
 
 ![about](image/step.gif)
