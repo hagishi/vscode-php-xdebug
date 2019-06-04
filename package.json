@@ -1,7 +1,7 @@
 {
   "name": "php-xdebug",
   "displayName": "PHP Xdebug",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "kakumei",
   "description": "php xdebug configuration for VS Code.",
   "icon": "image/icon.png",
@@ -18,7 +18,8 @@
   },
   "license": "MIT",
   "keywords": [
-    "php"
+    "php",
+    "docker"
   ],
   "engines": {
     "vscode": "^1.34.0",
@@ -70,36 +71,38 @@
         "languages": [
           "php"
         ],
-        "initialConfigurations": [
-          {
-            "name": "Listen for XDebug",
-            "type": "php",
-            "request": "launch",
-            "port": 9000
-          },
-          {
-            "name": "Launch currently open script",
-            "type": "php",
-            "request": "launch",
-            "program": "${file}",
-            "cwd": "${fileDirname}",
-            "port": 9000
-          }
-        ],
         "configurationSnippets": [
           {
-            "name": "Listen for XDebug",
-            "type": "php",
-            "request": "launch",
-            "port": 9000
+            "label": "PHP Listen for XDebug",
+            "body": {
+              "name": "Listen for XDebug",
+              "type": "php",
+              "request": "launch",
+              "port": 9000
+            }
           },
           {
-            "name": "Launch currently open script",
-            "type": "php",
-            "request": "launch",
-            "program": "${file}",
-            "cwd": "${fileDirname}",
-            "port": 9000
+            "label": "PHP Launch currently open script",
+            "body": {
+              "name": "Launch currently open script",
+              "type": "php",
+              "request": "launch",
+              "program": "${file}",
+              "cwd": "${fileDirname}",
+              "port": 9000
+            }
+          },
+          {
+            "label": "PHP Xdebug for Docker",
+            "body": {
+              "name": "Xdebug for Docker",
+              "type": "php",
+              "request": "launch",
+              "port": 9000,
+              "pathMappings": {
+                "${1:dockerPath}": "^\"\\${workspaceFolder}\""
+              }
+            }
           }
         ]
       }
